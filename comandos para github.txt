@@ -1,0 +1,30 @@
+Comandos Github
+
+git remote (lista os repositório cadastrado no no pc)
+
+{-adicionar url (repositorio)= git remote add origin(nome que da para o repositorio)
+e passa a urel}
+
+$ git config --global user.name "valber siqueira"
+
+$ git config --global user.email "siqueiravalber20@gmail.com"
+
+$ git config --global color.ui true
+
+
+remover o repositorio
+
+{git remote rm origin(nome do repositório que deseja remover)}
+
+comitar 
+git commit -m "comentario aqui"
+git push origin master
+
+git branch -a lista todos os repositorios
+
+fazer clone de repositorio
+
+git clone e passa a url
+
+
+
