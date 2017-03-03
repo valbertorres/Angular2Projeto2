@@ -16,7 +16,7 @@ import { InMemoryDataService } from './in-memory.service';
 
 import { ProdutoService } from './produtos/produto.service';
 
-import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     imports : [
