@@ -1,20 +1,20 @@
 <div class="container" id="cadastroProduto">
  <!-- Nav tabs -->
 <ul  class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a  class="nav-link active" data-toggle="tab" href="#lista" role="tab">Lista</a>
+  <li  class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#lista" role="tab">Lista</a>
   </li>
   <li class="nav-item">
-    <a  class="nav-link" data-toggle="tab" href="#cadastro" role="tab">Cadastrar</a>
+    <a  class="nav-link" data-toggle="tab" href="#cadastro"  role="tab">Cadastrar</a>
   </li>
   <li class="nav-item" id="btnSair">
     <button class="btn btn-secondary" (click)="goBack()" ><span>&times;</span></button>
   </li>
 </ul>
-
 <!-- Tab panes -->
-<div class="tab-content" id="cadastroProduto">
-  <div class="tab-pane active" id="lista" role="tabpanel">
+
+<div class="tab-content" id="cadastroProduto" >
+  <div class="tab-pane fade show active " id="lista" role="tabpanel">
      <h2>Lista De Produtos</h2>
      <div lass="table-responsive">
    <table class="table table-small-font table-bordered table-striped table-hover">
@@ -28,7 +28,7 @@
             </tr>    
         </thead>
         <tbody id="table">
-            <tr *ngFor = "let p of produtos " (click)="getListaProduto(p)">
+            <tr *ngFor = "let p of produtos " (click)="getListaProduto(p)" >
                  <td>{{ p.codigo }}</td>
                  <td>{{ p.descricao }}</td>
                  <td>{{ p.grupo }}</td>
@@ -53,12 +53,13 @@
        <div class="form-group">
         <label for="" class="control-label col-sm-3">Descrição:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="descricao" [(ngModel)]="listaprodutos.descricao">
+          <input type="text" class="form-control" name="descricao" 
+          [(ngModel)]="listaprodutos.descricao">
         </div>
       </div>
     </form>
-    <button class="btn btn-success">Salvar</button>
-    <button class="btn btn-danger"(click)="log(spiy)">log</button>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <button class="btn btn-danger"(click)="log(lista)">log</button>
   </div>
   </div>
 </div>

@@ -14,8 +14,10 @@ import { Location } from '@angular/common';
 })
 export class ProdutoComponent{
 
+private teste:boolean = false;
 produtos : Produto[]= [];
-listaprodutos : Produto
+listaprodutos : Produto;
+private classLink:{};
 
 constructor(
     private location : Location,
@@ -33,6 +35,12 @@ constructor(
 
     getListaProduto(produto : Produto):void{
         this.listaprodutos = produto;
+       
+    }
+    
+    tete():void{
+        this.teste= true;
+        
     }
 
     goBack():void{

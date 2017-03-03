@@ -17,6 +17,7 @@ var ProdutoComponent = (function () {
     function ProdutoComponent(location, produtoService) {
         this.location = location;
         this.produtoService = produtoService;
+        this.teste = false;
         this.produtos = [];
     }
     ProdutoComponent.prototype.ngOnInit = function () {
@@ -29,6 +30,9 @@ var ProdutoComponent = (function () {
     };
     ProdutoComponent.prototype.getListaProduto = function (produto) {
         this.listaprodutos = produto;
+    };
+    ProdutoComponent.prototype.tete = function () {
+        this.teste = true;
     };
     ProdutoComponent.prototype.goBack = function () {
         this.location.back();
