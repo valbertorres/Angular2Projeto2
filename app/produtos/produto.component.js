@@ -17,7 +17,7 @@ var ProdutoComponent = (function () {
     function ProdutoComponent(location, produtoService) {
         this.location = location;
         this.produtoService = produtoService;
-        this.teste = false;
+        this.tabPaine = false;
         this.produtos = [];
     }
     ProdutoComponent.prototype.ngOnInit = function () {
@@ -30,9 +30,29 @@ var ProdutoComponent = (function () {
     };
     ProdutoComponent.prototype.getListaProduto = function (produto) {
         this.listaprodutos = produto;
+        this.cadastroProduto();
     };
-    ProdutoComponent.prototype.tete = function () {
-        this.teste = true;
+    ProdutoComponent.prototype.cadastroProduto = function () {
+        $(function () {
+            $('#cadastro').addClass('active');
+            $('#lista').removeClass('active');
+        });
+        this.tabPaine = true;
+    };
+    ProdutoComponent.prototype.novoProduto = function () {
+        this.listaprodutos = new produtos_model_1.Produto(null, '', null, null, '', null);
+        $(function () {
+            $('#cadastro').addClass('active');
+            $('#lista').removeClass('active');
+        });
+        this.tabPaine = true;
+    };
+    ProdutoComponent.prototype.listaProduto = function () {
+        $(function () {
+            $('#lista').addClass('active');
+            $('#cadastro').removeClass('active');
+        });
+        this.tabPaine = false;
     };
     ProdutoComponent.prototype.goBack = function () {
         this.location.back();

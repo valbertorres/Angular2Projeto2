@@ -14,10 +14,13 @@ import { Location } from '@angular/common';
 })
 export class ProdutoComponent{
 
-private teste:boolean = false;
+private tabPaine:boolean = false;
+
+
+
 produtos : Produto[]= [];
 listaprodutos : Produto;
-private classLink:{};
+private testeLink:{};
 
 constructor(
     private location : Location,
@@ -35,12 +38,34 @@ constructor(
 
     getListaProduto(produto : Produto):void{
         this.listaprodutos = produto;
+        this.cadastroProduto();
        
     }
     
-    tete():void{
-        this.teste= true;
-        
+    cadastroProduto():void{
+    $(function(){
+          $('#cadastro').addClass('active');
+        $('#lista').removeClass('active');
+    })
+        this.tabPaine = true;
+    }
+
+     novoProduto():void{
+         this.listaprodutos= new Produto(null,'',null,null,'',null);
+    $(function(){
+          $('#cadastro').addClass('active');
+        $('#lista').removeClass('active');
+    })
+        this.tabPaine = true;
+    }
+
+
+    listaProduto():void{
+    $(function(){
+          $('#lista').addClass('active');
+        $('#cadastro').removeClass('active'); 
+    })
+        this.tabPaine = false;
     }
 
     goBack():void{
@@ -52,7 +77,6 @@ constructor(
     }
 
 }
-
 
 
 
